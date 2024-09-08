@@ -72,3 +72,24 @@ def test_length_of_longest_substring():
 
     # Test Case 10
     assert solution.lengthOfLongestSubstring("aabaab!a") == 3
+
+def test_find_median_sorted_arrays():
+    # Test Case 1
+    nums1 = [1, 3]
+    nums2 = [2]
+    assert solution.findMedianSortedArrays(nums1, nums2) == 2.0
+
+    # Test Case 2
+    nums1 = [1, 2]
+    nums2 = [3, 4]
+    assert solution.findMedianSortedArrays(nums1, nums2) == 2.5
+
+    # Test Case 3
+    nums1 = [0, 0]
+    nums2 = [0, 0]
+    assert solution.findMedianSortedArrays(nums1, nums2) == 0.0
+
+    # Test Case 4
+    nums1 = []
+    nums2 = [1]
+    assert solution.findMedianSortedArrays(nums1, nums2) == 1.0

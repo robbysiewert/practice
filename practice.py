@@ -9,6 +9,8 @@ class ListNode:
         self.next = next
 
 class Solution:
+
+    # Problem 1
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         num_map = {}
         for i, num in enumerate(nums):
@@ -19,6 +21,7 @@ class Solution:
                 num_map[num] = i
         return []
 
+    # Problem 2
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         carry_the_one = 0
         head = current = ListNode(0)
@@ -33,6 +36,7 @@ class Solution:
             l2 = l2.next if l2 else None
         return head.next
 
+    # Problem 3
     def lengthOfLongestSubstring(self, s: str) -> int:
 
         # initialize variables
@@ -49,3 +53,13 @@ class Solution:
             if len_current_substring > len_longest_substring:
                 len_longest_substring = len_current_substring
         return len_longest_substring
+
+    # Problem 4
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        combined_array = nums1 + nums2
+        combined_array.sort()
+        median_index = len(combined_array) // 2
+        if len(combined_array) % 2 != 0:
+            return float(combined_array[median_index])
+        else:
+            return (combined_array[median_index] + combined_array[median_index - 1]) / 2
